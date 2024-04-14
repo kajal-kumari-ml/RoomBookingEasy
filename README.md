@@ -1,4 +1,4 @@
-## RoomBookingEasy
+### RoomBookingEasy
 Develop and deploy a RESTful API service using Spring Boot to streamline the room booking process for a hotel management aggregator application.
 
 ### Spring Security 
@@ -59,4 +59,4 @@ message: Success message.
 
 ### Postman
 
-🔗 https://winter-flare-851632.postman.co/workspace/kajal~ed0bd169-879d-4182-a30e-8d7e212ef617/collection/15511430-a03d7840-52d8-49a4-832f-0a2eea6e5232?action=share&creator=15511430
+🔗 https://winter-flare-851632.postman.co/workspace/kajal~ed0bd169-879d-4182-a30e-8d7e212ef617/collection/15511430-4d4c6811-e573-4efc-81d3-3704da2bc890?action=share&creator=15511430
