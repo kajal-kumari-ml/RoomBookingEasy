@@ -15,7 +15,7 @@ import com.booking.stayease.Entity.Hotel;
 import com.booking.stayease.Service.HotelService;
 
 @RestController
-@RequestMapping("/api/v1/hotel_manager/")
+@RequestMapping("/api/v1/hotel_manager")
 public class HotelContoller {
 
     @Autowired

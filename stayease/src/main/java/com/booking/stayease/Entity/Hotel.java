@@ -8,8 +8,8 @@ import jakarta.persistence.Id;
 @Entity
 public class Hotel {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id=0l;
 
     private String name;
 
@@ -24,7 +24,8 @@ public class Hotel {
     public Hotel() {
     }
 
-    public Hotel(String name, String location, String description, int availableRooms, double pricePerNight) {
+    public Hotel(Long id,String name, String location, String description, int availableRooms, double pricePerNight) {
+        this.id=id;
         this.name = name;
         this.location = location;
         this.description = description;

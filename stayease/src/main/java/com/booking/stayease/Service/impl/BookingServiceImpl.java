@@ -12,7 +12,7 @@ import com.booking.stayease.exception.UsernameNotFoundException;
 
 @Service
 public class BookingServiceImpl implements BookingService {
-    
+
     @Autowired
     private BookingRepository bookingRepository;
 
@@ -21,24 +21,25 @@ public class BookingServiceImpl implements BookingService {
 
     public Booking bookRoom(Long hotelId, Booking booking) {
         // Decrease available rooms count
-        try{
-        Hotel hotel = hotelRepository.findById(hotelId).get();
+        try {
+            Hotel hotel = hotelRepository.findById(hotelId).get();
 
-        int availableRooms = hotel.getAvailableRooms();
-        if (availableRooms > 0) {
-            hotel.setAvailableRooms(availableRooms - 1);
-            Booking newBooking = new Booking();
-            newBooking.setHotel(booking.getHotel());
-            hotelRepository.save(hotel);
-            newBooking.setUser(booking.getUser());
-            bookingRepository.save(newBooking);
-            return newBooking;
-                } else {
-            throw new UsernameNotFoundException("No available rooms in the hotel");
+            int availableRooms = hotel.getAvailableRooms();
+            if (availableRooms > 0) {
+                hotel.setAvailableRooms(availableRooms - 1);
+                Booking newBooking = new Booking();
+                newBooking.setId(booking.getId());
+                newBooking.setHotel(booking.getHotel());
+                hotelRepository.save(hotel);
+                newBooking.setUser(booking.getUser());
+                bookingRepository.save(newBooking);
+                return newBooking;
+            } else {
+                throw new UsernameNotFoundException("No available rooms in the hotel");
+            }
+        } catch (Exception e) {
+            throw new UsernameNotFoundException("Hotel not found");
         }
-    } catch(Exception e){
-        throw new UsernameNotFoundException("Hotel not found");
-    }
 
     }
 
@@ -53,4 +54,3 @@ public class BookingServiceImpl implements BookingService {
         bookingRepository.delete(booking);
     }
 }
-

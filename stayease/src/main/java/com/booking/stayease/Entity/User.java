@@ -20,8 +20,8 @@ import jakarta.persistence.Table;
 public class User implements UserDetails {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id=0l;
 
     private String name;
 
@@ -34,7 +34,8 @@ public class User implements UserDetails {
     public User() {
     }
 
-    public User(String name, String email, String password) {
+    public User(Long id,String name, String email, String password) {
+        this.id=id;
         this.name = name;
         this.email = email;
         this.password = password;
