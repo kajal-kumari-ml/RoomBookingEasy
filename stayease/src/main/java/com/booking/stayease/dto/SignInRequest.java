@@ -1,16 +1,13 @@
 package com.booking.stayease.dto;
 
 public class SignInRequest {
-
-    private Long id;
     private String username;
     private String password;
 
     public SignInRequest() {
     }
 
-    public SignInRequest(Long id,String username, String password) {
-        this.id=id;
+    public SignInRequest(String username, String password) {
         this.username = username;
         this.password = password;
     }
